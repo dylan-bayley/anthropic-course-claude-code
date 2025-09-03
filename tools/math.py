@@ -1,4 +1,7 @@
+import logging
 from pydantic import Field
+
+logger = logging.getLogger(__name__)
 
 
 def add(
@@ -20,4 +23,7 @@ def add(
     >>> add(2.5, 3.5)
     6.0
     """
-    return a + b
+    logger.info(f"Adding {a} + {b}")
+    result = a + b
+    logger.info(f"Addition result: {result}")
+    return result
